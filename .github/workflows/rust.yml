@@ -1,0 +1,27 @@
+on: [push]
+name: Luhny.rs CI
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+    
+      - name: "Run tests."
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+        
+      - name: "Validate an IMEI number from the CLI. (true case)"
+        uses: actions-rs/cargo@v1
+        with:
+            command: run
+            args: -- -c 353879234252633
+
+      - name: "Validate an IMEI number from the CLI. (false case)"
+        uses: actions-rs/cargo@v1
+        with:
+            command: run
+            args: -- -c 353879234252634

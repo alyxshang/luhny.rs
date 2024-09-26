@@ -1,0 +1,20 @@
+[package]
+name = "luhny"
+version = "0.1.0"
+edition = "2021"
+license-file = "LICENSE"
+author = ["Alyx Shang"]
+description= "A library and tool to validate unique device identifiers."
+homepage = "https://github.com/alyxshang/luhny.rs"
+repository = "https://github.com/alyxshang/luhny.rs"
+readme = "README.markdown"
+
+[dependencies]
+cliply = { git = "https://github.com/alyxshang/cliply", tag = "v.0.1.0" }
+coutils = { git = "https://github.com/alyxshang/coutils", tag = "v.0.1.0" }
+
+[profile.release]
+lto = true
+strip = true
+opt-level = "z"
+codegen-units = 1
