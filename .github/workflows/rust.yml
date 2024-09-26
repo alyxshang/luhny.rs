@@ -13,6 +13,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
+          args: -- --nocapture
         
       - name: "Validate an IMEI number from the CLI. (true case)"
         uses: actions-rs/cargo@v1
