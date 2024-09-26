@@ -130,10 +130,6 @@ pub fn convert_string_to_num_array(
     }
     else {
         if is_number_sequence(subject){
-            let e: String = "The supplied string is not a number sequence.".to_string();
-            Err::<Vec<usize>,LuhnyErr>(LuhnyErr::new(&e.to_string()))
-        }      
-        else {
             let mut res: Vec<usize> = Vec::new();
             let chars: Vec<char> = subject.chars().collect();
             for character in chars {
@@ -145,6 +141,10 @@ pub fn convert_string_to_num_array(
                 res.push(integer);
             }
             Ok(res)
+        }      
+        else {
+            let e: String = "The supplied string is not a number sequence.".to_string();
+            Err::<Vec<usize>,LuhnyErr>(LuhnyErr::new(&e.to_string()))
         }  
     }
 }
