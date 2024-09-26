@@ -14,8 +14,8 @@ use coutils::is_int;
 use super::err::LuhnyErr;
 
 /// This function checks whether a string consists of
-/// only digits. If this is the case, `true` is returned.
-/// If this is not the case, `false` is returned.
+/// only digits. If this is the case, "true" is returned.
+/// If this is not the case, "false" is returned.
 pub fn is_number_sequence(subject: &String) -> bool {
     let mut result: bool = true;
     let subject_characters: Vec<char> = subject.chars().collect();
@@ -29,8 +29,8 @@ pub fn is_number_sequence(subject: &String) -> bool {
 }
 
 /// This function iterates through
-/// all items in a vector, doubles each,
-/// and adds them to a new vector. If the
+/// all items in a vector, doubles each item,
+/// and adds each double to a new vector. If the
 /// operation fails, an error is returned.
 pub fn double_numbers_in_arr(
     num_array: &Vec<usize>

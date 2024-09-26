@@ -22,10 +22,10 @@ use super::luhny::validate_imei;
 pub fn cli() -> Result<String,LuhnyErr> {
     let mut luhny: App = App::new(
         "Luhny",
-        "Alyx Shang",
-        "0.1.0"
+        "0.1.0",
+        "Alyx Shang"
     );
-    luhny.add_arg("chk", "check the supplied IMEI number", &true);
+    luhny.add_arg("chk", "      check the supplied IMEI number", &true);
     if luhny.version_is(){
         Ok(luhny.version_info())
     }
